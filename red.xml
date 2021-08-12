@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <relativeTo>WORKSPACE</relativeTo>
+    <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="C:/Python37-32/Lib/site-packages/SeleniumLibrary/__init__.py"/>
+    <referencedLibrary type="PYTHON" name="ImapLibrary2" path="C:/Python37-32/Lib/site-packages/ImapLibrary2/__init__.py"/>
+    <referencedLibrary type="PYTHON" name="Lambdatest" path="C:/Python37-32/Lib/site-packages/Lambdatest.py"/>
+    <referencedLibrary type="PYTHON" name="ExcelLibrary" path="C:/Python37-32/Lib/site-packages/ExcelLibrary.py"/>
+    <pythonpath/>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+</projectConfiguration>

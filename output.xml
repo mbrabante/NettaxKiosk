@@ -1,0 +1,4503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.6 on win32)" generated="20210812 10:41:06.424" rpa="false">
+<suite id="s1" name="Nettax Kiosk Mode" source="C:\Users\Marlon\Desktop\Auto Project\CurtisDigital\Nettax Kiosk Mode">
+<suite id="s1-s1" name="Test Cases" source="C:\Users\Marlon\Desktop\Auto Project\CurtisDigital\Nettax Kiosk Mode\Test Cases">
+<kw name="Login to Tenant Portal" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${tenantURL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210812 10:41:07.316" level="INFO">Opening browser 'chrome' to base url 'https://longhorn.dev.nettax.crts.io/'.</msg>
+<status status="PASS" starttime="20210812 10:41:07.315" endtime="20210812 10:41:25.348"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210812 10:41:25.349" endtime="20210812 10:41:25.473"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.15 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:41:25.473" endtime="20210812 10:41:25.473"></status>
+</kw>
+<kw name="Waiting for loading to complete" library="Common">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${loc_screenLoading}</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:41:25.473" endtime="20210812 10:41:25.645"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:41:25.473" endtime="20210812 10:41:25.647"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_inputUsername}</arg>
+<arg>60</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:41:25.648" endtime="20210812 10:41:26.013"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_inputUsername}</arg>
+<arg>${adminUsername}</arg>
+</arguments>
+<msg timestamp="20210812 10:41:26.013" level="INFO">Typing text 'marlon@crts.io' into text field '//input[@aria-describedby='login-email']'.</msg>
+<status status="PASS" starttime="20210812 10:41:26.013" endtime="20210812 10:41:26.599"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_inputPassword}</arg>
+<arg>${adminPassword}</arg>
+</arguments>
+<msg timestamp="20210812 10:41:26.599" level="INFO">Typing password into text field '//input[@aria-describedby='login-password']'.</msg>
+<status status="PASS" starttime="20210812 10:41:26.599" endtime="20210812 10:41:27.227"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnSignin}</arg>
+</arguments>
+<msg timestamp="20210812 10:41:27.228" level="INFO">Clicking element '//button[text()='Sign in ']'.</msg>
+<status status="PASS" starttime="20210812 10:41:27.228" endtime="20210812 10:41:27.595"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:41:07.315" endtime="20210812 10:41:27.595"></status>
+</kw>
+<suite id="s1-s1-s1" name="Kiosk Mode" source="C:\Users\Marlon\Desktop\Auto Project\CurtisDigital\Nettax Kiosk Mode\Test Cases\Kiosk Mode.robot">
+<test id="s1-s1-s1-t1" name="Test Kiosk Mode">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Launch Kiosk Mode</arg>
+<arg>Palm Harbor, FL</arg>
+<arg>AND</arg>
+<arg>User Start the Kiosk</arg>
+</arguments>
+<kw name="Launch Kiosk Mode" library="Common">
+<arguments>
+<arg>Palm Harbor, FL</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnKioskMode}</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:41:27.615" endtime="20210812 10:41:28.666"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnKioskMode}</arg>
+</arguments>
+<msg timestamp="20210812 10:41:28.667" level="INFO">Clicking element '//button[text()='Kiosk Mode']'.</msg>
+<status status="PASS" starttime="20210812 10:41:28.666" endtime="20210812 10:41:29.006"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_listKioskLocation}//a[contains(text(), '${location}')]</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:41:29.006" endtime="20210812 10:41:29.333"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_listKioskLocation}//a[contains(text(), '${location}')]</arg>
+</arguments>
+<msg timestamp="20210812 10:41:29.333" level="INFO">Clicking element '//div[@class='dropdown-menu show']//a[contains(text(), 'Palm Harbor, FL')]'.</msg>
+<status status="PASS" starttime="20210812 10:41:29.333" endtime="20210812 10:42:36.191"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:41:27.615" endtime="20210812 10:42:36.192"></status>
+</kw>
+<kw name="User Start the Kiosk" library="Common">
+<kw name="Waiting for loading to complete" library="Common">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${loc_screenLoading}</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:36.193" endtime="20210812 10:42:36.362"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:36.193" endtime="20210812 10:42:36.363"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnStartKiosk}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:36.363" endtime="20210812 10:42:36.715"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnStartKiosk}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:36.716" level="INFO">Clicking element '//button[text()='Start']'.</msg>
+<status status="PASS" starttime="20210812 10:42:36.716" endtime="20210812 10:42:37.070"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:36.192" endtime="20210812 10:42:37.070"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:41:27.614" endtime="20210812 10:42:37.071"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | 2 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>&amp;{Employee}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.072" level="INFO">&amp;{Employee} = { }</msg>
+<status status="PASS" starttime="20210812 10:42:37.071" endtime="20210812 10:42:37.072"></status>
+</kw>
+<kw name="Get Employee Data" library="Common">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>&amp;{Employee}</var>
+</assign>
+<kw name="Close All Excel Documents" library="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" starttime="20210812 10:42:37.073" endtime="20210812 10:42:37.073"></status>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<doc>Opens xlsx document file.</doc>
+<arguments>
+<arg>${dataEmployees}</arg>
+<arg>doc_id=docid</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.073" endtime="20210812 10:42:37.125"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>&amp;{content}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.126" level="INFO">&amp;{content} = { }</msg>
+<status status="PASS" starttime="20210812 10:42:37.126" endtime="20210812 10:42:37.126"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | 80 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.127" level="INFO">${var_col} = tenant_id_psf_emp1</msg>
+<status status="PASS" starttime="20210812 10:42:37.127" endtime="20210812 10:42:37.127"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.128" endtime="20210812 10:42:37.128"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.130" level="INFO">${temp} = ['tenant_id_psf_emp1', 992038, 667144, 132029, 817419, 868635, 534128, 904172, 236254, 456577, 426851, None, 199805, 120340, 496129, None, 469835, 445490, 206405, 277045, 673250, 641896, 514316, None,...</msg>
+<status status="PASS" starttime="20210812 10:42:37.129" endtime="20210812 10:42:37.130"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.130" endtime="20210812 10:42:37.131"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.127" endtime="20210812 10:42:37.131"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.132" level="INFO">${var_col} = employee_firstname_psf_e1</msg>
+<status status="PASS" starttime="20210812 10:42:37.132" endtime="20210812 10:42:37.132"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.133" endtime="20210812 10:42:37.133"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.134" level="INFO">${temp} = ['employee_firstname_psf_e1', 'Lind', 'Ramsay', 'Kort', 'Elle', 'Wilmar', 'Greg', 'Suzette', 'Nettie', 'Garrett', 'Auberta', 'Kat', 'Hinze', 'Mala', 'Karylin', 'Freeland', 'Xaviera', 'Adel', 'Donnell'...</msg>
+<status status="PASS" starttime="20210812 10:42:37.133" endtime="20210812 10:42:37.134"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.134" endtime="20210812 10:42:37.135"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.132" endtime="20210812 10:42:37.135"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.137" level="INFO">${var_col} = employee_lastname_psf_e2</msg>
+<status status="PASS" starttime="20210812 10:42:37.136" endtime="20210812 10:42:37.137"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.137" endtime="20210812 10:42:37.137"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.138" level="INFO">${temp} = ['employee_lastname_psf_e2', 'Greenhaugh', 'Pooke', 'Crinage', 'Semonin', 'Creus', 'French', 'McIlenna', 'Baynom', 'Blabey', 'Gaiger', 'Oxenbury', 'Illingworth', 'Flawn', 'Petri', 'Moulds', 'Broadhead...</msg>
+<status status="PASS" starttime="20210812 10:42:37.138" endtime="20210812 10:42:37.138"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.139" endtime="20210812 10:42:37.139"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.135" endtime="20210812 10:42:37.139"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.140" level="INFO">${var_col} = hire_date_psf_e33</msg>
+<status status="PASS" starttime="20210812 10:42:37.140" endtime="20210812 10:42:37.140"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.140" endtime="20210812 10:42:37.141"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.142" level="INFO">${temp} = ['hire_date_psf_e33', '2/11/1992', '3/31/2009', '11/29/1998', '11/14/1998', '11/16/2000', '4/26/2007', '5/12/1994', '11/6/1984', '6/15/2006', '10/15/2001', '2/28/1998', '8/14/1998', '8/17/1994', '12/4...</msg>
+<status status="PASS" starttime="20210812 10:42:37.141" endtime="20210812 10:42:37.142"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.142" endtime="20210812 10:42:37.142"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.139" endtime="20210812 10:42:37.142"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.143" level="INFO">${var_col} = ssn_psf_e4</msg>
+<status status="PASS" starttime="20210812 10:42:37.143" endtime="20210812 10:42:37.144"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.144" endtime="20210812 10:42:37.144"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.145" level="INFO">${temp} = ['ssn_psf_e4', '600-28-9897', '229-45-0024', '700-84-0719', '509-27-6901', '212-88-8296', '834-01-5050', '622-26-3374', '864-26-0967', '720-75-4488', '866-52-7451', None, '692-36-5970', '197-12-6866',...</msg>
+<status status="PASS" starttime="20210812 10:42:37.144" endtime="20210812 10:42:37.146"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.146" endtime="20210812 10:42:37.146"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.143" endtime="20210812 10:42:37.147"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.147" level="INFO">${var_col} = phone_number_psf_e5</msg>
+<status status="PASS" starttime="20210812 10:42:37.147" endtime="20210812 10:42:37.147"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.148" endtime="20210812 10:42:37.148"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.149" level="INFO">${temp} = ['phone_number_psf_e5', '(402) 1600938', '(314) 2007154', '(574) 6887190', '(518) 5447834', '(253) 2221896', '(720) 5167245', '(617) 2183610', '(347) 7017080', '(917) 1719666', '(401) 3238243', '(202)...</msg>
+<status status="PASS" starttime="20210812 10:42:37.148" endtime="20210812 10:42:37.149"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.149" endtime="20210812 10:42:37.150"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.147" endtime="20210812 10:42:37.150"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.151" level="INFO">${var_col} = birth_date_psf_66</msg>
+<status status="PASS" starttime="20210812 10:42:37.150" endtime="20210812 10:42:37.151"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.151" endtime="20210812 10:42:37.151"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.152" level="INFO">${temp} = ['birth_date_psf_66', '1/22/1958', '4/9/1974', '2/10/1965', '12/2/1965', '4/16/1967', '6/12/1972', '2/25/1960', '6/24/1950', '5/27/1973', '10/10/1967', '9/2/1964', '5/11/1964', '11/22/1960', '10/25/19...</msg>
+<status status="PASS" starttime="20210812 10:42:37.152" endtime="20210812 10:42:37.152"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.153" endtime="20210812 10:42:37.153"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.150" endtime="20210812 10:42:37.153"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.154" level="INFO">${var_col} = address_street_psf_7</msg>
+<status status="PASS" starttime="20210812 10:42:37.154" endtime="20210812 10:42:37.154"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.154" endtime="20210812 10:42:37.155"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.156" level="INFO">${temp} = ['address_street_psf_7', '4 Kim Way', '127 Sachtjen Trail', '1407 Red Cloud Street', '08417 Graceland Plaza', '8081 Rusk Court', '227 Walton Hill', '1 Orin Parkway', '465 Crownhardt Circle', '2937 Car...</msg>
+<status status="PASS" starttime="20210812 10:42:37.155" endtime="20210812 10:42:37.156"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.156" endtime="20210812 10:42:37.157"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.153" endtime="20210812 10:42:37.157"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.158" level="INFO">${var_col} = address_city_psf_e8</msg>
+<status status="PASS" starttime="20210812 10:42:37.157" endtime="20210812 10:42:37.158"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.158" endtime="20210812 10:42:37.159"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.160" level="INFO">${temp} = ['address_city_psf_e8', 'Omaha', 'Saint Louis', 'South Bend', 'Albany', 'Lakewood', 'Aurora', 'Boston', 'New York City', 'Flushing', 'Providence', 'Washington', 'Albuquerque', 'Norfolk', 'Portland', '...</msg>
+<status status="PASS" starttime="20210812 10:42:37.159" endtime="20210812 10:42:37.160"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.160" endtime="20210812 10:42:37.161"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.157" endtime="20210812 10:42:37.161"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.162" level="INFO">${var_col} = address_county_psf_e9</msg>
+<status status="PASS" starttime="20210812 10:42:37.162" endtime="20210812 10:42:37.162"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.163" endtime="20210812 10:42:37.163"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.164" level="INFO">${temp} = ['address_county_psf_e9', 'Petersburg, City of[aa]', 'Evangeline Parish', 'Union', 'Hernando', 'Gem', 'Warren', 'Sherman', 'La Plata', 'Hopewell, City of[aa]', 'Hardeman', 'Miami-Dade', 'Hansford', 'R...</msg>
+<status status="PASS" starttime="20210812 10:42:37.163" endtime="20210812 10:42:37.164"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.164" endtime="20210812 10:42:37.165"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.161" endtime="20210812 10:42:37.165"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.167" level="INFO">${var_col} = address_state_psf_e10</msg>
+<status status="PASS" starttime="20210812 10:42:37.166" endtime="20210812 10:42:37.167"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.167" endtime="20210812 10:42:37.168"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.170" level="INFO">${temp} = ['address_state_psf_e10', 'NE', 'MO', 'IN', 'NY', 'WA', 'CO', 'MA', 'NY', 'NY', 'RI', 'DC', 'NM', 'VA', 'OR', 'NY', 'IL', 'AZ', 'CA', 'TN', 'CT', 'MN', 'MN', 'MD', 'CO', 'NC']</msg>
+<status status="PASS" starttime="20210812 10:42:37.169" endtime="20210812 10:42:37.170"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.171" endtime="20210812 10:42:37.172"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.165" endtime="20210812 10:42:37.172"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.173" level="INFO">${var_col} = address_postal_psf_11</msg>
+<status status="PASS" starttime="20210812 10:42:37.173" endtime="20210812 10:42:37.174"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.174" endtime="20210812 10:42:37.174"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.176" level="INFO">${temp} = ['address_postal_psf_11', 68179, 63116, 46634, 12227, 98498, 80015, 2163, 10019, 11355, 2912, 20425, 87110, 23504, 97211, 11215, 60624, 85725, 91520, 37245, 6510, 55557, 55166, 21684, 80995, 28278]</msg>
+<status status="PASS" starttime="20210812 10:42:37.175" endtime="20210812 10:42:37.176"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.177" endtime="20210812 10:42:37.177"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.172" endtime="20210812 10:42:37.178"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.179" level="INFO">${var_col} = militaryservice_1stQuestion_psf_m1</msg>
+<status status="PASS" starttime="20210812 10:42:37.178" endtime="20210812 10:42:37.179"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.179" endtime="20210812 10:42:37.180"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.181" level="INFO">${temp} = ['militaryservice_1stQuestion_psf_m1', 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.180" endtime="20210812 10:42:37.181"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.181" endtime="20210812 10:42:37.181"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.178" endtime="20210812 10:42:37.182"></status>
+</kw>
+<kw name="${i} = 14" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.183" level="INFO">${var_col} = militaryservice_1stQuestion_branch_psf_m11</msg>
+<status status="PASS" starttime="20210812 10:42:37.182" endtime="20210812 10:42:37.183"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.183" endtime="20210812 10:42:37.184"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.185" level="INFO">${temp} = ['militaryservice_1stQuestion_branch_psf_m11', 'Navy', 'Coast Guard', '', '', 'Coast Guard', '', 'Army', '', '', 'Army', 'Army', 'Marine Corps', 'Marine Corps', '', '', '', 'Marine Corps', 'Air Force'...</msg>
+<status status="PASS" starttime="20210812 10:42:37.184" endtime="20210812 10:42:37.185"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.185" endtime="20210812 10:42:37.186"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.182" endtime="20210812 10:42:37.186"></status>
+</kw>
+<kw name="${i} = 15" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.187" level="INFO">${var_col} = militaryservice_1stQuestion_from_psf_m1c</msg>
+<status status="PASS" starttime="20210812 10:42:37.187" endtime="20210812 10:42:37.187"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.188" endtime="20210812 10:42:37.188"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.189" level="INFO">${temp} = ['militaryservice_1stQuestion_from_psf_m1c', '11/1977', '01/1994', None, None, '01/1987', None, '12/1979', None, None, '07/1987', '06/1984', '02/1984', '09/1980', '08/2001', None, None, '07/2002', '03...</msg>
+<status status="PASS" starttime="20210812 10:42:37.188" endtime="20210812 10:42:37.189"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.190" endtime="20210812 10:42:37.191"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.187" endtime="20210812 10:42:37.191"></status>
+</kw>
+<kw name="${i} = 16" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.192" level="INFO">${var_col} = militaryservice_1stQuestion_to_psf_m1d</msg>
+<status status="PASS" starttime="20210812 10:42:37.191" endtime="20210812 10:42:37.192"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.192" endtime="20210812 10:42:37.193"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.194" level="INFO">${temp} = ['militaryservice_1stQuestion_to_psf_m1d', '11/1987', '01/2004', None, None, '01/1997', None, '12/1989', None, None, '07/1997', '06/1994', '02/1994', '09/1990', '08/2011', None, None, '07/2012', '03/2...</msg>
+<status status="PASS" starttime="20210812 10:42:37.193" endtime="20210812 10:42:37.194"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.194" endtime="20210812 10:42:37.195"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.191" endtime="20210812 10:42:37.195"></status>
+</kw>
+<kw name="${i} = 17" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.196" level="INFO">${var_col} = militaryservice_2ndQuestion_psf_m2</msg>
+<status status="PASS" starttime="20210812 10:42:37.195" endtime="20210812 10:42:37.196"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.196" endtime="20210812 10:42:37.197"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.197" level="INFO">${temp} = ['militaryservice_2ndQuestion_psf_m2', 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.197" endtime="20210812 10:42:37.198"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.198" endtime="20210812 10:42:37.199"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.195" endtime="20210812 10:42:37.199"></status>
+</kw>
+<kw name="${i} = 18" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.201" level="INFO">${var_col} = militaryservice_3rdQuestion_psf_m3</msg>
+<status status="PASS" starttime="20210812 10:42:37.200" endtime="20210812 10:42:37.201"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.201" endtime="20210812 10:42:37.202"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.202" level="INFO">${temp} = ['militaryservice_3rdQuestion_psf_m3', 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.202" endtime="20210812 10:42:37.203"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.203" endtime="20210812 10:42:37.203"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.200" endtime="20210812 10:42:37.204"></status>
+</kw>
+<kw name="${i} = 19" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.205" level="INFO">${var_col} = militaryservice_4thQuestion_psf_m4</msg>
+<status status="PASS" starttime="20210812 10:42:37.204" endtime="20210812 10:42:37.205"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.205" endtime="20210812 10:42:37.205"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.207" level="INFO">${temp} = ['militaryservice_4thQuestion_psf_m4', 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.206" endtime="20210812 10:42:37.207"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.207" endtime="20210812 10:42:37.208"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.204" endtime="20210812 10:42:37.208"></status>
+</kw>
+<kw name="${i} = 20" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.210" level="INFO">${var_col} = militaryservice_4thQuestion_when_psf_m4b</msg>
+<status status="PASS" starttime="20210812 10:42:37.209" endtime="20210812 10:42:37.210"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.211" endtime="20210812 10:42:37.211"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.214" level="INFO">${temp} = ['militaryservice_4thQuestion_when_psf_m4b', '01/1983', '04/1999', None, None, '04/1992', None, '02/1985', None, None, '10/1992', None, '05/1989', '11/1985', '10/2006', None, None, None, '05/2006', No...</msg>
+<status status="PASS" starttime="20210812 10:42:37.212" endtime="20210812 10:42:37.214"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.214" endtime="20210812 10:42:37.215"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.209" endtime="20210812 10:42:37.215"></status>
+</kw>
+<kw name="${i} = 21" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.216" level="INFO">${var_col} = assistance_1stQuestion_psf_a1</msg>
+<status status="PASS" starttime="20210812 10:42:37.216" endtime="20210812 10:42:37.216"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.216" endtime="20210812 10:42:37.217"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.218" level="INFO">${temp} = ['assistance_1stQuestion_psf_a1', 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.217" endtime="20210812 10:42:37.218"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.218" endtime="20210812 10:42:37.219"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.215" endtime="20210812 10:42:37.219"></status>
+</kw>
+<kw name="${i} = 22" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.220" level="INFO">${var_col} = assistance_1stQuestion_Recipient</msg>
+<status status="PASS" starttime="20210812 10:42:37.219" endtime="20210812 10:42:37.220"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.220" endtime="20210812 10:42:37.221"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.222" level="INFO">${temp} = ['assistance_1stQuestion_Recipient', 1, 1, None, 1, 1, 0, None, 1, None, 1, 0, 0, None, 1, 1, 0, None, 1, None, 0, 1, 0, 1, None, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.221" endtime="20210812 10:42:37.222"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.222" endtime="20210812 10:42:37.223"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.219" endtime="20210812 10:42:37.223"></status>
+</kw>
+<kw name="${i} = 23" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.224" level="INFO">${var_col} = FirstQuestion_LastDateReceived_mmyyyy_psf_a1b</msg>
+<status status="PASS" starttime="20210812 10:42:37.223" endtime="20210812 10:42:37.224"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.224" endtime="20210812 10:42:37.225"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.226" level="INFO">${temp} = ['FirstQuestion_LastDateReceived_mmyyyy_psf_a1b', '10/2020', '11/2020', '', '03/2020', '11/2019', '02/2021', '', '01/2020', '', '04/2020', '10/2019', '11/2020', '', '07/2020', '09/2019', '11/2020', ''...</msg>
+<status status="PASS" starttime="20210812 10:42:37.225" endtime="20210812 10:42:37.226"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.226" endtime="20210812 10:42:37.227"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.223" endtime="20210812 10:42:37.227"></status>
+</kw>
+<kw name="${i} = 24" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.228" level="INFO">${var_col} = assistance_2ndQuestion_psf_a2</msg>
+<status status="PASS" starttime="20210812 10:42:37.227" endtime="20210812 10:42:37.228"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.228" endtime="20210812 10:42:37.229"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.230" level="INFO">${temp} = ['assistance_2ndQuestion_psf_a2', 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.229" endtime="20210812 10:42:37.230"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.230" endtime="20210812 10:42:37.231"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.227" endtime="20210812 10:42:37.231"></status>
+</kw>
+<kw name="${i} = 25" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.232" level="INFO">${var_col} = assistance_2ndQuestion_Recipient</msg>
+<status status="PASS" starttime="20210812 10:42:37.232" endtime="20210812 10:42:37.232"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.233" endtime="20210812 10:42:37.233"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.234" level="INFO">${temp} = ['assistance_2ndQuestion_Recipient', 0, None, 1, None, None, 1, None, 0, None, None, 1, 1, 0, 0, None, None, None, 0, None, None, None, 0, None, None, None]</msg>
+<status status="PASS" starttime="20210812 10:42:37.233" endtime="20210812 10:42:37.235"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.235" endtime="20210812 10:42:37.235"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.231" endtime="20210812 10:42:37.236"></status>
+</kw>
+<kw name="${i} = 26" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.237" level="INFO">${var_col} = SecondQuestion_LastDateReceived_mmyyyy_psf_a2b</msg>
+<status status="PASS" starttime="20210812 10:42:37.236" endtime="20210812 10:42:37.237"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.237" endtime="20210812 10:42:37.237"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.238" level="INFO">${temp} = ['SecondQuestion_LastDateReceived_mmyyyy_psf_a2b', '01/2020', '', '09/2020', '', '', '02/2021', '', '05/2020', '', '', '11/2019', '12/2019', '12/2019', '09/2020', '', '', '', '09/2019', '', '', '', '0...</msg>
+<status status="PASS" starttime="20210812 10:42:37.238" endtime="20210812 10:42:37.238"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.239" endtime="20210812 10:42:37.239"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.236" endtime="20210812 10:42:37.239"></status>
+</kw>
+<kw name="${i} = 27" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.240" level="INFO">${var_col} = assistance_3rdQuestion_City_pdf_a2c</msg>
+<status status="PASS" starttime="20210812 10:42:37.240" endtime="20210812 10:42:37.241"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.241" endtime="20210812 10:42:37.241"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.242" level="INFO">${temp} = ['assistance_3rdQuestion_City_pdf_a2c', 'Omaha', 'Saint Louis', 'South Bend', 'Albany', 'Lakewood', 'Aurora', '', 'New York City', '', 'Providence', 'Washington', 'Albuquerque', 'Norfolk', 'Portland',...</msg>
+<status status="PASS" starttime="20210812 10:42:37.242" endtime="20210812 10:42:37.243"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.243" endtime="20210812 10:42:37.243"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.240" endtime="20210812 10:42:37.244"></status>
+</kw>
+<kw name="${i} = 28" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.245" level="INFO">${var_col} = assistance_3rdQuestion_State_psf_a2d</msg>
+<status status="PASS" starttime="20210812 10:42:37.244" endtime="20210812 10:42:37.245"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.245" endtime="20210812 10:42:37.246"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.247" level="INFO">${temp} = ['assistance_3rdQuestion_State_psf_a2d', 'GA', 'Missouri', 'Indiana', 'New York', 'Washington', 'Colorado', '', 'New York', '', 'Rhode Island', 'District of Columbia', 'New Mexico', 'Virginia', 'Orego...</msg>
+<status status="PASS" starttime="20210812 10:42:37.246" endtime="20210812 10:42:37.247"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.248" endtime="20210812 10:42:37.248"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.244" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="${i} = 29" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${var_col} = assistance_3rdQuestion_CaseNo_psf_a2e</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${temp} = ['assistance_3rdQuestion_CaseNo_psf_a2e', 6996, 2804, 7127, 5206, 5770, 5181, '', 5368, '', 9993, 5899, 9558, 3934, 2875, 1287, 6568, '', 7257, '', 5223, 3887, 6291, 5819, '', 9940]</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="${i} = 30" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${var_col} = assistance_3rdQuestion_CaseWorker_psf_a2f</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${temp} = ['assistance_3rdQuestion_CaseWorker_psf_a2f', 'Olive Bright', 'Alexia Anthony', 'Bridger Hancock', 'Davon Duncan', 'John Barnes', 'Bridger Hancock', 'Bridger Hancock', 'Jaydon Stanley', 'Madeline Mcgu...</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="${i} = 31" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${var_col} = assistance_3rdQuestion_PhoneNo_psf_a2g</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${temp} = ['assistance_3rdQuestion_PhoneNo_psf_a2g', '(704) 4881525', '(502) 2715759', '(317) 7538877', '(903) 6952422', '(915) 2569566', '(772) 8787864', '(901) 9709345', '(570) 4033441', '(646) 6544978', '(60...</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="${i} = 32" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${var_col} = assistance_3rdQuestion_PrimaryRecipient_psf_a2h</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.249" level="INFO">${temp} = ['assistance_3rdQuestion_PrimaryRecipient_psf_a2h', 'Lind Greenhaugh', 'Ramsay Pooke', 'Kort Crinage', 'Elle Semonin', 'Wilmar Creus', 'Greg French', 'Suzette McIlenna', 'Nettie Baynom', 'Garrett Blab...</msg>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.249"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.264"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.249" endtime="20210812 10:42:37.264"></status>
+</kw>
+<kw name="${i} = 33" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.264" level="INFO">${var_col} = assistance_3rdQuestion_SSN_psf_a2i</msg>
+<status status="PASS" starttime="20210812 10:42:37.264" endtime="20210812 10:42:37.264"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.264" endtime="20210812 10:42:37.264"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.264" level="INFO">${temp} = ['assistance_3rdQuestion_SSN_psf_a2i', '549-15-7558', '857-32-7808', '197-48-3806', '399-68-2699', '700-85-9459', '465-18-9832', '102-52-4969', '838-64-2328', '775-90-4713', '619-98-4719', '333-31-665...</msg>
+<status status="PASS" starttime="20210812 10:42:37.264" endtime="20210812 10:42:37.264"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.264" endtime="20210812 10:42:37.264"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.264" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="${i} = 34" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${var_col} = vhssi_1stQuestion_psf_v1</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${temp} = ['vhssi_1stQuestion_psf_v1', 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="${i} = 35" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${var_col} = vhssi_1stQuestion_LastDateReceived(mm/yyyy)_psf_v1b</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${temp} = ['vhssi_1stQuestion_LastDateReceived(mm/yyyy)_psf_v1b', '01/2020', '', '09/2020', '09/2020', '05/2020', '06/2020', '', '03/2020', '04/2021', '03/2020', '12/2019', '08/2020', '03/2020', '12/2020', '03/...</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="${i} = 36" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${var_col} = vhssi_2ndQuestion_psf_v2</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${temp} = ['vhssi_2ndQuestion_psf_v2', 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="${i} = 37" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${var_col} = vhssi_2ndQuestion_LastDateReceived(mm/yyyy)_psf_v2b</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.268" level="INFO">${temp} = ['vhssi_2ndQuestion_LastDateReceived(mm/yyyy)_psf_v2b', '', '01/2021', '12/2019', '', '', '', '10/2019', '', '10/2019', '12/2020', '11/2020', '10/2019', '', '', '10/2020', '01/2021', '07/2020', '12/20...</msg>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.268"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.284"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.268" endtime="20210812 10:42:37.284"></status>
+</kw>
+<kw name="${i} = 38" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.285" level="INFO">${var_col} = vhssi_3rdQuestion_psf_v3</msg>
+<status status="PASS" starttime="20210812 10:42:37.284" endtime="20210812 10:42:37.285"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.285" endtime="20210812 10:42:37.286"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.287" level="INFO">${temp} = ['vhssi_3rdQuestion_psf_v3', 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.286" endtime="20210812 10:42:37.287"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.287" endtime="20210812 10:42:37.288"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.284" endtime="20210812 10:42:37.288"></status>
+</kw>
+<kw name="${i} = 39" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.289" level="INFO">${var_col} = vhssi_3rdQuestion_When(mm/yyyy)_psf_v3b</msg>
+<status status="PASS" starttime="20210812 10:42:37.289" endtime="20210812 10:42:37.289"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.289" endtime="20210812 10:42:37.290"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.291" level="INFO">${temp} = ['vhssi_3rdQuestion_When(mm/yyyy)_psf_v3b', '', '01/2021', '', '', '', '12/2020', '03/2021', '', '', '', '', '', '', '08/2019', '', '02/2020', '', '', '11/2019', '', '11/2020', '02/2020', '03/2021', '...</msg>
+<status status="PASS" starttime="20210812 10:42:37.290" endtime="20210812 10:42:37.291"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.291" endtime="20210812 10:42:37.292"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.288" endtime="20210812 10:42:37.292"></status>
+</kw>
+<kw name="${i} = 40" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.293" level="INFO">${var_col} = vhssi_4thQuestion_psf_v4</msg>
+<status status="PASS" starttime="20210812 10:42:37.292" endtime="20210812 10:42:37.293"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.293" endtime="20210812 10:42:37.294"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.295" level="INFO">${temp} = ['vhssi_4thQuestion_psf_v4', 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.294" endtime="20210812 10:42:37.295"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.295" endtime="20210812 10:42:37.296"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.292" endtime="20210812 10:42:37.296"></status>
+</kw>
+<kw name="${i} = 41" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.297" level="INFO">${var_col} = vhssi_4thQuestion_When(mm/yyyy)_psf_v4b</msg>
+<status status="PASS" starttime="20210812 10:42:37.296" endtime="20210812 10:42:37.297"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.297" endtime="20210812 10:42:37.298"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.299" level="INFO">${temp} = ['vhssi_4thQuestion_When(mm/yyyy)_psf_v4b', '11/2019', '', '01/2020', '12/2019', '02/2020', '', '07/2020', '', '', '11/2019', '', '04/2020', '', '', '', '', '', '', '10/2019', '', '09/2019', '', '', '...</msg>
+<status status="PASS" starttime="20210812 10:42:37.298" endtime="20210812 10:42:37.299"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.299" endtime="20210812 10:42:37.300"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.296" endtime="20210812 10:42:37.300"></status>
+</kw>
+<kw name="${i} = 42" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${var_col} = vhssi_4thQuestion_Agency_psf_v4c</msg>
+<status status="PASS" starttime="20210812 10:42:37.300" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${temp} = ['vhssi_4thQuestion_Agency_psf_v4c', 'McGlynn, Price and Cassin', '', 'Hauck-Leannon', 'Crist Inc', 'Ruecker-Strosin', '', 'Ryan, Williamson and Predovic', '', '', 'Kuhlman-Bergnaum', '', 'Cormier, To...</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.300" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="${i} = 43" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${var_col} = vhssi_4thQuestion_County_psf_v4d</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${temp} = ['vhssi_4thQuestion_County_psf_v4d', 'Arkansas', 'Strafford', 'Polk', 'Clay', 'Hardin', 'White', 'Duchesne', 'Stutsman', 'Huron', 'Essex', None, 'Wabaunsee', 'Madison', 'Holmes', None, 'Saint Croix Is...</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="${i} = 44" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${var_col} = vhssi_4thQuestion_State_psf_v4e</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${temp} = ['vhssi_4thQuestion_State_psf_v4e', 'North Carolina', 'Kentucky', 'Indiana', 'Texas', 'Texas', 'Florida', 'Tennessee', 'Pennsylvania', 'New York', 'Arizona', None, 'Louisiana', 'Massachusetts', 'Maine...</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="${i} = 45" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${var_col} = vhssi_4thQuestion_CounselorName_psf_v4f</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.301" level="INFO">${temp} = ['vhssi_4thQuestion_CounselorName_psf_v4f', 'Zaniyah Tran', '', 'Brody Snyder', 'Malia Arias', 'Carley Delacruz', '', 'Kendall Palmer', '', '', 'Elizabeth Salinas', None, 'Logan Caldwell', '', '', Non...</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.301"></status>
+</kw>
+<kw name="${i} = 46" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${var_col} = vhssi_4thQuestion_Phone#_psf_v4g</msg>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${temp} = ['vhssi_4thQuestion_Phone#_psf_v4g', '(469) 8463848', '(901) 7134726', '(682) 6516413', None, '(212) 6579053', None, '(412) 1495341', '(214) 6237095', '(561) 4250252', '(440) 5301044', '(682) 2878105'...</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.301" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="${i} = 47" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${var_col} = doc_1stQuestion_psf_dc1</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${temp} = ['doc_1stQuestion_psf_dc1', 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="${i} = 48" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${var_col} = doc_1stQuestion_ConvictionDate(mm/yyyy)_psf_dc1b</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${temp} = ['doc_1stQuestion_ConvictionDate(mm/yyyy)_psf_dc1b', '', '', '02/2016', '', '', '', '', '04/2016', '11/2018', '10/2016', None, '06/2018', '', '01/2018', None, '', '', '01/2018', '', '02/2016', '12/201...</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="${i} = 49" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${var_col} = doc_1stQuestion_ReleaseDate(mm/yyyy)_psf_dc1c</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.317" level="INFO">${temp} = ['doc_1stQuestion_ReleaseDate(mm/yyyy)_psf_dc1c', '', '', '02/2018', '', '', '', '', '04/2018', '11/2020', '10/2018', '10/2020', '06/2020', '', '01/2020', '', '', '', '01/2020', '', '02/2018', '12/201...</msg>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.317"></status>
+</kw>
+<kw name="${i} = 50" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${var_col} = doc_2ndQuestion_psf_dc2</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${temp} = ['doc_2ndQuestion_psf_dc2', 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.317" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="${i} = 51" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${var_col} = doc_2ndQuestion_WhenFrom (PSF-DC2b)</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${temp} = ['doc_2ndQuestion_WhenFrom (PSF-DC2b)', '', '', '10/2017', '', '', '', '', '12/2017', '', '06/2018', '06/2020', '', '', '08/2019', '', '', '', '09/2019', '', '10/2017', '07/2019', '', '', '', '01/2019...</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="${i} = 52" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${var_col} = doc_2ndQuestion_WhenTo_psf_dc2c</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${temp} = ['doc_2ndQuestion_WhenTo_psf_dc2c', '', '', '01/2018', '', '', '', '', '03/2018', '', '09/2018', '09/2020', '', '', '12/2019', '', '', '', '12/2019', '', '01/2018', '11/2019', '', '', '', '04/2019']</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="${i} = 53" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${var_col} = doc_3rdQuestion(1=State/2=Federal)_psf_dc22</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.333" level="INFO">${temp} = ['doc_3rdQuestion(1=State/2=Federal)_psf_dc22', '', '', 1, '', '', '', '', 1, 1, 1, 1, 1, '', 1, '', '', '', 1, '', 1, 1, '', '', '', 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.333"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.348"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.333" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="${i} = 54" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${var_col} = doc_3rdQuestion_County_psf_dc2e</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${temp} = ['doc_3rdQuestion_County_psf_dc2e', None, None, 'Lauderdale', None, None, None, None, 'Prowers', 'Iroquois', 'Wheeler', 'Columbia', 'Shannon', None, 'Dallas', None, None, None, 'St. Helena Parish', No...</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="${i} = 55" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${var_col} = doc_3rdQuestion_State_psf_dc2f</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${temp} = ['doc_3rdQuestion_State_psf_dc2f', None, None, 'Texas', None, None, None, None, 'Texas', 'Florida', 'Ohio', 'Texas', 'Florida', None, 'Ohio', None, None, None, 'California', None, 'Virginia', 'North C...</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="${i} = 56" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${var_col} = doc_4thQuestion(1=Felony/2=Misdemeanor)_psf_dc2g</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${temp} = ['doc_4thQuestion(1=Felony/2=Misdemeanor)_psf_dc2g', '', '', 1, '', '', '', '', 1, 2, 1, 1, 1, '', 2, '', '', '', 1, '', 2, 1, '', '', '', 2]</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="${i} = 57" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${var_col} = doc_4thQuestion_OfficerName_psf_dc2h</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.348" level="INFO">${temp} = ['doc_4thQuestion_OfficerName_psf_dc2h', '', '', 'Regina Duarte', '', '', '', '', 'Darion Reid', '', 'Madeline Mcguire', 'Samara Long', '', '', 'Lamar Evans', '', '', '', 'Alex Anthony', '', 'Cedric G...</msg>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.348"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.364"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.348" endtime="20210812 10:42:37.364"></status>
+</kw>
+<kw name="${i} = 58" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.364" level="INFO">${var_col} = doc_4thQuestion_Phone#_psf_dc2i</msg>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.364"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.364"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.364" level="INFO">${temp} = ['doc_4thQuestion_Phone#_psf_dc2i', '', '', '(717) 4428675', None, '', None, '', '(505) 2934968', '', '(979) 4913063', '(202) 1582536', '', '', '(718) 6450753', '', '', '', '(215) 2818996', None, None...</msg>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.364"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.368"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.364" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="${i} = 59" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${var_col} = unemployment_1stQuestion_psf_ue1</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${temp} = ['unemployment_1stQuestion_psf_ue1', 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="${i} = 60" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${var_col} = unemployment_1stQuestion_Months_psf_ue1b</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${temp} = ['unemployment_1stQuestion_Months_psf_ue1b', 18, 16, '', '', 6, 16, '', '', '', '', 8, '', '', '', '', '', '', 2, 9, 3, '', '', 7, '', 7]</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="${i} = 61" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${var_col} = unemployment_2ndQuestion_psf_ue2</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${temp} = ['unemployment_2ndQuestion_psf_ue2', 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1]</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="${i} = 62" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.368" level="INFO">${var_col} = unemployment_3rdQuestion_psf_ue3</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.368"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${temp} = ['unemployment_3rdQuestion_psf_ue3', 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]</msg>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.368" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="${i} = 63" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${var_col} = unemployment_3rdQuestion_LastDateReceived_psf_ue3b</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${temp} = ['unemployment_3rdQuestion_LastDateReceived_psf_ue3b', '', '3/29/2019', '', '3/30/2020', '', '', '2/22/2020', '', '', '10/2/2018', '7/11/2019', '6/29/2019', '4/7/2019', '2/23/2019', '5/31/2020', '11/8...</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="${i} = 64" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${var_col} = unemployment_4thQuestion_psf_ue3c</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${temp} = ['unemployment_4thQuestion_psf_ue3c', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="${i} = 65" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${var_col} = prev_employer_name</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${temp} = ['prev_employer_name', '', '', 'Skiba', 'Zoovu', '', '', 'Photobean', 'Fanoodle', 'Miboo', 'Podcat', '', 'Aivee', 'Bluejam', 'Topicblab', 'Layo', 'Avamba', 'Zooxo', '', '', '', 'Fadeo', 'Gabtype', '',...</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="${i} = 66" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.384" level="INFO">${var_col} = prev_employer_address</msg>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.384"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${temp} = ['prev_employer_address', '', '', '06141 Lien Parkway', '99 Parkside Road', '', '', '5 Waxwing Way', '459 Shopko Road', '788 Hooker Hill', '55 Sycamore Terrace', '', '7863 Northview Avenue', '80 Kedzi...</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.384" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="${i} = 67" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${var_col} = prev_employer_city</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${temp} = ['prev_employer_city', '', '', 'Indianapolis', 'Tyler', '', '', 'Memphis', 'Scranton', 'Brooklyn', 'Gilbert', '', 'New Orleans', 'Worcester', 'Portland', 'Abilene', 'Bellevue', 'Jackson', '', '', '', ...</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="${i} = 68" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${var_col} = prev_employer_state</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${temp} = ['prev_employer_state', '', '', 'IN', 'TX', '', '', 'TN', 'PA', 'NY', 'AZ', '', 'LA', 'MA', 'ME', 'TX', 'WA', 'MS', '', '', '', 'OH', 'AL', '', 'MD', '']</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="${i} = 69" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${var_col} = prev_employer_zip</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.400" level="INFO">${temp} = ['prev_employer_zip', '', '', 46266, 75799, '', '', 38143, 18505, 11205, 85297, '', 70154, 1610, 4109, 79605, 98008, 39296, '', '', '', 45807, 35805, '', 21216, '']</msg>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.400"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.415"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.400" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="${i} = 70" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.415" level="INFO">${var_col} = prev_employer_phone</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.415" level="INFO">${temp} = ['prev_employer_phone', '', '', '502 997 7518', '850 219 7400', '', '', '719 228 8104', '402 463 7715', '540 908 6697', '334 443 3554', '', '916 655 1013', '409 580 3751', '304 606 3039', '651 710 196...</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="${i} = 71" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.415" level="INFO">${var_col} = employee_signedDate_psf_e13</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<arguments>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.415" level="INFO">${temp} = ['employee_signedDate_psf_e13', '2/2/2021', '10/27/2020', '5/11/2020', '3/7/2021', '7/16/2019', '12/4/2020', '11/18/2020', '7/6/2020', '1/2/2021', '11/19/2020', '10/18/2019', '5/12/2020', '6/2/2020', ...</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${content}</arg>
+<arg>${temp[0]}</arg>
+<arg>${temp[${row}]}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="${i} = 72" type="foritem">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<doc>Returns content of a cell.</doc>
+<arguments>
+<arg>row_num=1</arg>
+<arg>col_num=${i}</arg>
+<arg>sheet_name=data</arg>
+</arguments>
+<assign>
+<var>${var_col}</var>
+</assign>
+<msg timestamp="20210812 10:42:37.415" level="INFO">${var_col} = None</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${var_col}'=='None'</arg>
+</arguments>
+<msg timestamp="20210812 10:42:37.415" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.126" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{content}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:37.415" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.415"></status>
+</kw>
+<msg timestamp="20210812 10:42:37.415" level="INFO">&amp;{Employee} = { tenant_id_psf_emp1=992038 | employee_firstname_psf_e1=Lind | employee_lastname_psf_e2=Greenhaugh | hire_date_psf_e33=2/11/1992 | ssn_psf_e4=600-28-9897 | phone_number_psf_e5=(402) 1600938 | birth_da...</msg>
+<status status="PASS" starttime="20210812 10:42:37.072" endtime="20210812 10:42:37.415"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>&amp;{Employee}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:37.431" level="INFO">&amp;{Employee} = { tenant_id_psf_emp1=992038 | employee_firstname_psf_e1=Lind | employee_lastname_psf_e2=Greenhaugh | hire_date_psf_e33=2/11/1992 | ssn_psf_e4=600-28-9897 | phone_number_psf_e5=(402) 1600938 | birth_da...</msg>
+<status status="PASS" starttime="20210812 10:42:37.415" endtime="20210812 10:42:37.431"></status>
+</kw>
+<kw name="Populate Your Info Page" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_employeeFirstName}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:37.431" endtime="20210812 10:42:37.786"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeFirstName}</arg>
+<arg>${Employee.employee_firstname_psf_e1}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:37.786" level="INFO">Typing text 'Lind' into text field '//label[text()='First Name (PSF-E1)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:37.786" endtime="20210812 10:42:38.416"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeLastName}</arg>
+<arg>${Employee.employee_lastname_psf_e2}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:38.418" level="INFO">Typing text 'Greenhaugh' into text field '//label[text()='Last Name (PSF-E2)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:38.417" endtime="20210812 10:42:39.074"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeSSN}</arg>
+<arg>${Employee.ssn_psf_e4}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:39.075" level="INFO">Typing text '600-28-9897' into text field '//label[text()='Social Security Number (PSF-E3)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:39.074" endtime="20210812 10:42:39.799"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeDOBCalendarIcon}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:39.801" level="INFO">Clicking element '//button[@class='btn btn-outline-secondary calendar-btn']'.</msg>
+<status status="PASS" starttime="20210812 10:42:39.800" endtime="20210812 10:42:40.407"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.birth_date_psf_66}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${DOB}</var>
+</assign>
+<msg timestamp="20210812 10:42:40.408" level="INFO">${DOB} = ['1', '22', '1958']</msg>
+<status status="PASS" starttime="20210812 10:42:40.407" endtime="20210812 10:42:40.408"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_employeeDOBMonth}</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:40.409" endtime="20210812 10:42:40.795"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_employeeDOBMonth}</arg>
+<arg>${DOB}[0]</arg>
+</arguments>
+<msg timestamp="20210812 10:42:40.795" level="INFO">Selecting options from selection list '//select[@title='Select month']' by value 1.</msg>
+<status status="PASS" starttime="20210812 10:42:40.795" endtime="20210812 10:42:42.211"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_employeeDOBYear}</arg>
+<arg>${DOB}[2]</arg>
+</arguments>
+<msg timestamp="20210812 10:42:42.212" level="INFO">Selecting options from selection list '//select[@title='Select year']' by value 1958.</msg>
+<status status="PASS" starttime="20210812 10:42:42.211" endtime="20210812 10:42:43.501"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210812 10:42:44.511" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210812 10:42:43.503" endtime="20210812 10:42:44.511"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@class='btn-light' and text()='${DOB}[1]']</arg>
+</arguments>
+<msg timestamp="20210812 10:42:44.511" level="INFO">Clicking element '//div[@class='btn-light' and text()='22']'.</msg>
+<status status="PASS" starttime="20210812 10:42:44.511" endtime="20210812 10:42:44.914"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeAddress}</arg>
+<arg>${Employee.address_street_psf_7}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:44.914" level="INFO">Typing text '4 Kim Way' into text field '//label[text()='Address (PSF-E5)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:44.914" endtime="20210812 10:42:45.671"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeCity}</arg>
+<arg>${Employee.address_city_psf_e8}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:45.674" level="INFO">Typing text 'Omaha' into text field '//label[text()='City (PSF-E6)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:45.672" endtime="20210812 10:42:46.334"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeCounty}</arg>
+<arg>${Employee.address_county_psf_e9}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:46.337" level="INFO">Typing text 'Petersburg, City of[aa]' into text field '//label[text()='County (PSF-E7)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:46.335" endtime="20210812 10:42:46.981"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_employeeState}</arg>
+<arg>${Employee.address_state_psf_e10}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:46.984" level="INFO">Selecting options from selection list '//label[text()='State (PSF-E8)']/..//select' by value NE.</msg>
+<status status="PASS" starttime="20210812 10:42:46.982" endtime="20210812 10:42:48.372"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeeZip}</arg>
+<arg>${Employee.address_postal_psf_11}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:48.375" level="INFO">Typing text '68179' into text field '//label[text()='Zip (PSF-E9)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:48.373" endtime="20210812 10:42:49.025"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_employeePhone}</arg>
+<arg>${Employee.phone_number_psf_e5}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:49.025" level="INFO">Typing text '(402) 1600938' into text field '//label[text()='Phone (PSF-E10)']/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:42:49.025" endtime="20210812 10:42:49.755"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210812 10:42:52.772" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210812 10:42:49.756" endtime="20210812 10:42:52.772"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:52.772" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:42:52.772" endtime="20210812 10:42:53.175"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:37.431" endtime="20210812 10:42:53.175"></status>
+</kw>
+<kw name="Populate Military Service Page" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:53.175" endtime="20210812 10:42:57.207"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.militaryservice_1stQuestion_psf_m1}'=='1'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Populate Veteran Details</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.militaryservice_1stQuestion_psf_m1}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Populate Veteran Details</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:57.207" level="INFO">Clicking element '//input[@id='yes']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:42:57.207" endtime="20210812 10:42:57.693"></status>
+</kw>
+<kw name="Populate Veteran Details" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_VeteranBranch}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:42:57.693" endtime="20210812 10:42:59.896"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${loc_VeteranBranch}</arg>
+<arg>${Employee.militaryservice_1stQuestion_branch_psf_m11}</arg>
+</arguments>
+<msg timestamp="20210812 10:42:59.896" level="INFO">Selecting options from selection list '//div[@class='questions']//div//div//select' by label Navy.</msg>
+<status status="PASS" starttime="20210812 10:42:59.896" endtime="20210812 10:43:01.114"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:01.117" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:01.115" endtime="20210812 10:43:01.533"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.militaryservice_1stQuestion_from_psf_m1c}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${enlistedDate}</var>
+</assign>
+<msg timestamp="20210812 10:43:01.533" level="INFO">${enlistedDate} = ['11', '1977']</msg>
+<status status="PASS" starttime="20210812 10:43:01.533" endtime="20210812 10:43:01.533"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${enlistedDate}[0]</arg>
+</arguments>
+<assign>
+<var>${enlistedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:01.533" level="INFO">${enlistedDateMonth} = 11</msg>
+<status status="PASS" starttime="20210812 10:43:01.533" endtime="20210812 10:43:01.533"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${enlistedDateMonth}</arg>
+</arguments>
+<assign>
+<var>${enlistedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:01.533" level="INFO">${enlistedDateMonth} = 11</msg>
+<status status="PASS" starttime="20210812 10:43:01.533" endtime="20210812 10:43:01.533"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_VeteranEnlistedDateMonth}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:01.533" endtime="20210812 10:43:02.252"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_VeteranEnlistedDateMonth}</arg>
+<arg>${enlistedDateMonth}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:02.252" level="INFO">Selecting options from selection list '//label[text()='Enlisted Date']/../app-month-year-selector//select' by value 11.</msg>
+<status status="PASS" starttime="20210812 10:43:02.252" endtime="20210812 10:43:03.485"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_VeteranEnlistedDateYear}</arg>
+<arg>${enlistedDate}[1]</arg>
+</arguments>
+<msg timestamp="20210812 10:43:03.486" level="INFO">Typing text '1977' into text field '//label[text()='Enlisted Date']/../app-month-year-selector//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:03.485" endtime="20210812 10:43:04.132"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.militaryservice_1stQuestion_to_psf_m1d}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${separatedDate}</var>
+</assign>
+<msg timestamp="20210812 10:43:04.135" level="INFO">${separatedDate} = ['11', '1987']</msg>
+<status status="PASS" starttime="20210812 10:43:04.133" endtime="20210812 10:43:04.136"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${separatedDate}[0]</arg>
+</arguments>
+<assign>
+<var>${separatedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:04.138" level="INFO">${separatedDateMonth} = 11</msg>
+<status status="PASS" starttime="20210812 10:43:04.137" endtime="20210812 10:43:04.138"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${separatedDateMonth}</arg>
+</arguments>
+<assign>
+<var>${separatedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:04.141" level="INFO">${separatedDateMonth} = 11</msg>
+<status status="PASS" starttime="20210812 10:43:04.139" endtime="20210812 10:43:04.142"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_VeteranSeparatedDateMonth}</arg>
+<arg>${separatedDateMonth}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:04.145" level="INFO">Selecting options from selection list '//label[text()='Separated Date']/../app-month-year-selector//select' by value 11.</msg>
+<status status="PASS" starttime="20210812 10:43:04.143" endtime="20210812 10:43:05.424"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_VeteranSeparatedDateYear}</arg>
+<arg>${separatedDate}[1]</arg>
+</arguments>
+<msg timestamp="20210812 10:43:05.427" level="INFO">Typing text '1987' into text field '//label[text()='Separated Date']/../app-month-year-selector//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:05.425" endtime="20210812 10:43:06.044"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:09.059" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:06.046" endtime="20210812 10:43:09.059"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:09.059" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:09.059" endtime="20210812 10:43:09.445"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:09.445" endtime="20210812 10:43:10.914"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.militaryservice_2ndQuestion_psf_m2}'=='1'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.militaryservice_2ndQuestion_psf_m2}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:10.914" level="INFO">Clicking element '//input[@id='yes']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:10.914" endtime="20210812 10:43:11.330"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:10.914" endtime="20210812 10:43:11.330"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:13.337" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:11.330" endtime="20210812 10:43:13.337"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:13.337" endtime="20210812 10:43:13.660"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.militaryservice_3rdQuestion_psf_m3}'=='1'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.militaryservice_3rdQuestion_psf_m3}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:13.660" level="INFO">Clicking element '//input[@id='no']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:13.660" endtime="20210812 10:43:14.077"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:13.660" endtime="20210812 10:43:14.077"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:16.080" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:14.077" endtime="20210812 10:43:16.080"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:16.080" endtime="20210812 10:43:16.464"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.militaryservice_4thQuestion_psf_m4}'=='1'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input Job Training Date</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.militaryservice_4thQuestion_psf_m4}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input Job Training Date</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:16.464" level="INFO">Clicking element '//input[@id='yes']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:16.464" endtime="20210812 10:43:16.882"></status>
+</kw>
+<kw name="Input Job Training Date" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_VeteranJobTrainingDVAMonth}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:16.882" endtime="20210812 10:43:17.618"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.militaryservice_4thQuestion_when_psf_m4b}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${jobTrainingDate}</var>
+</assign>
+<msg timestamp="20210812 10:43:17.618" level="INFO">${jobTrainingDate} = ['01', '1983']</msg>
+<status status="PASS" starttime="20210812 10:43:17.618" endtime="20210812 10:43:17.618"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${jobTrainingDate}[0]</arg>
+</arguments>
+<assign>
+<var>${jobTrainingDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:17.618" level="INFO">${jobTrainingDateMonth} = 1</msg>
+<status status="PASS" starttime="20210812 10:43:17.618" endtime="20210812 10:43:17.618"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${jobTrainingDateMonth}</arg>
+</arguments>
+<assign>
+<var>${jobTrainingDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:17.618" level="INFO">${jobTrainingDateMonth} = 1</msg>
+<status status="PASS" starttime="20210812 10:43:17.618" endtime="20210812 10:43:17.618"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_VeteranJobTrainingDVAMonth}</arg>
+<arg>${jobTrainingDateMonth}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:17.618" level="INFO">Selecting options from selection list '//label[text()='Job Training Program Date']/../app-month-year-selector//select' by value 1.</msg>
+<status status="PASS" starttime="20210812 10:43:17.618" endtime="20210812 10:43:18.870"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_VeteranJobTrainingDVAYear}</arg>
+<arg>${jobTrainingDate}[1]</arg>
+</arguments>
+<msg timestamp="20210812 10:43:18.870" level="INFO">Typing text '1983' into text field '//label[text()='Job Training Program Date']/../app-month-year-selector//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:18.870" endtime="20210812 10:43:19.495"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:22.513" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:19.496" endtime="20210812 10:43:22.513"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:22.513" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:22.513" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:16.882" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:16.464" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:16.464" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:57.693" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:57.207" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:57.207" endtime="20210812 10:43:22.929"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:42:53.175" endtime="20210812 10:43:22.929"></status>
+</kw>
+<kw name="Populate Assistance Page" library="Common">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:24.936" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:22.929" endtime="20210812 10:43:24.936"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:24.936" endtime="20210812 10:43:25.306"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.assistance_1stQuestion_psf_a1}'=='1'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input TANF Details</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.assistance_1stQuestion_psf_a1}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input TANF Details</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:25.306" level="INFO">Clicking element '//input[@id='yes']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:25.306" endtime="20210812 10:43:25.823"></status>
+</kw>
+<kw name="Input TANF Details" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnAssistanceIam}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:25.823" endtime="20210812 10:43:26.945"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.assistance_1stQuestion_Recipient}'=='1'</arg>
+<arg>Run keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceIam}</arg>
+<arg>AND</arg>
+<arg>Input TANF Date Received</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.assistance_1stQuestion_Recipient}'=='0'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceSomeone}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>10</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>${Employee.assistance_3rdQuestion_PrimaryRecipient_psf_a2h}</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientSSN}</arg>
+<arg>${Employee.assistance_3rdQuestion_SSN_psf_a2}</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnNext}</arg>
+<arg>AND</arg>
+<arg>Input TANF Date Received</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceIam}</arg>
+<arg>AND</arg>
+<arg>Input TANF Date Received</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnAssistanceIam}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:26.945" level="INFO">Clicking element '//input[@id='i_am']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:26.945" endtime="20210812 10:43:27.447"></status>
+</kw>
+<kw name="Input TANF Date Received" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceTANFYear}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:27.447" endtime="20210812 10:43:28.166"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.FirstQuestion_LastDateReceived_mmyyyy_psf_a1b}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${TANFReceivedDate}</var>
+</assign>
+<msg timestamp="20210812 10:43:28.166" level="INFO">${TANFReceivedDate} = ['10', '2020']</msg>
+<status status="PASS" starttime="20210812 10:43:28.166" endtime="20210812 10:43:28.166"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${TANFReceivedDate}[0]</arg>
+</arguments>
+<assign>
+<var>${TANFReceiedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:28.166" level="INFO">${TANFReceiedDateMonth} = 10</msg>
+<status status="PASS" starttime="20210812 10:43:28.166" endtime="20210812 10:43:28.166"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${TANFReceiedDateMonth}</arg>
+</arguments>
+<assign>
+<var>${TANFReceiedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:28.166" level="INFO">${TANFReceiedDateMonth} = 10</msg>
+<status status="PASS" starttime="20210812 10:43:28.166" endtime="20210812 10:43:28.166"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_AssistanceTANFMonth}</arg>
+<arg>${TANFReceiedDateMonth}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:28.166" level="INFO">Selecting options from selection list '//label[text()='TANF Date Received']/../app-month-year-selector//select' by value 10.</msg>
+<status status="PASS" starttime="20210812 10:43:28.166" endtime="20210812 10:43:29.530"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceTANFYear}</arg>
+<arg>${TANFReceivedDate}[1]</arg>
+</arguments>
+<msg timestamp="20210812 10:43:29.532" level="INFO">Typing text '2020' into text field '//label[text()='TANF Date Received']/../app-month-year-selector//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:29.531" endtime="20210812 10:43:30.300"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:33.302" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:30.301" endtime="20210812 10:43:33.302"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:33.302" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:33.302" endtime="20210812 10:43:33.704"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:27.447" endtime="20210812 10:43:33.704"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:26.945" endtime="20210812 10:43:33.704"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:26.945" endtime="20210812 10:43:33.704"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCity}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:33.704" endtime="20210812 10:43:34.460"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCity}</arg>
+<arg>${Employee.assistance_3rdQuestion_City_pdf_a2c}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:34.460" level="INFO">Typing text 'Omaha' into text field '//label[contains(text(), 'City')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:34.460" endtime="20210812 10:43:35.033"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientState}</arg>
+<arg>${Employee.assistance_3rdQuestion_State_psf_a2d}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:35.037" level="INFO">Selecting options from selection list '//label[contains(text(), 'State')]/..//select' by label GA.</msg>
+<status status="PASS" starttime="20210812 10:43:35.035" endtime="20210812 10:43:36.288"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:36.289" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:36.288" endtime="20210812 10:43:36.699"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCaseNumber}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:36.699" endtime="20210812 10:43:37.402"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCaseNumber}</arg>
+<arg>${Employee.assistance_3rdQuestion_CaseNo_psf_a2e}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:37.402" level="INFO">Typing text '6996' into text field '//label[contains(text(), 'Case Number')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:37.402" endtime="20210812 10:43:38.037"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientWorkerName}</arg>
+<arg>${Employee.assistance_3rdQuestion_CaseWorker_psf_a2f}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:38.039" level="INFO">Typing text 'Olive Bright' into text field '//label[contains(text(), 'Name')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:38.038" endtime="20210812 10:43:38.656"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientWorkerPhone}</arg>
+<arg>${Employee.assistance_3rdQuestion_PhoneNo_psf_a2g}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:38.659" level="INFO">Typing text '(704) 4881525' into text field '//label[contains(text(), 'Phone Number')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:38.657" endtime="20210812 10:43:39.260"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:39.263" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:39.262" endtime="20210812 10:43:39.678"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:25.823" endtime="20210812 10:43:39.678"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:25.306" endtime="20210812 10:43:39.678"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:25.306" endtime="20210812 10:43:39.678"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:41.684" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:39.678" endtime="20210812 10:43:41.684"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:41.684" endtime="20210812 10:43:42.016"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.assistance_2ndQuestion_psf_a2}'=='1'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input SNAP Details</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.assistance_2ndQuestion_psf_a2}'=='0'</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranNo}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnVeteranYes}</arg>
+<arg>AND</arg>
+<arg>Input SNAP Details</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnVeteranYes}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:42.016" level="INFO">Clicking element '//input[@id='yes']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:42.016" endtime="20210812 10:43:42.449"></status>
+</kw>
+<kw name="Input SNAP Details" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_btnAssistanceIam}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:42.449" endtime="20210812 10:43:43.540"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Employee.assistance_2ndQuestion_Recipient}'=='1'</arg>
+<arg>Run keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceIam}</arg>
+<arg>AND</arg>
+<arg>Input SNAP Date Received</arg>
+<arg>ELSE IF</arg>
+<arg>'${Employee.assistance_2ndQuestion_Recipient}'=='0'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceSomeone}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>10</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>${Employee.assistance_3rdQuestion_PrimaryRecipient_psf_a2h}</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientSSN}</arg>
+<arg>${Employee.assistance_3rdQuestion_SSN_psf_a2i}</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnNext}</arg>
+<arg>AND</arg>
+<arg>Input SNAP Date Received</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${loc_btnAssistanceSomeone}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>10</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>${Employee.assistance_3rdQuestion_PrimaryRecipient_psf_a2h}</arg>
+<arg>AND</arg>
+<arg>Input Text</arg>
+<arg>${loc_AssistanceRecipientSSN}</arg>
+<arg>${Employee.assistance_3rdQuestion_SSN_psf_a2i}</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>${loc_btnNext}</arg>
+<arg>AND</arg>
+<arg>Input SNAP Date Received</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnAssistanceSomeone}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:43.540" level="INFO">Clicking element '//input[@id='someone_else']/../label'.</msg>
+<status status="PASS" starttime="20210812 10:43:43.540" endtime="20210812 10:43:44.126"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:44.126" endtime="20210812 10:43:44.830"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientName}</arg>
+<arg>${Employee.assistance_3rdQuestion_PrimaryRecipient_psf_a2h}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:44.830" level="INFO">Typing text 'Lind Greenhaugh' into text field '//label[contains(text(), 'Name')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:44.830" endtime="20210812 10:43:45.496"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientSSN}</arg>
+<arg>${Employee.assistance_3rdQuestion_SSN_psf_a2i}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:45.499" level="INFO">Typing text '549-15-7558' into text field '//label[contains(text(), 'SSN')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:45.498" endtime="20210812 10:43:46.149"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:46.151" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:46.149" endtime="20210812 10:43:46.537"></status>
+</kw>
+<kw name="Input SNAP Date Received" library="Common">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceSNAPYear}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:46.537" endtime="20210812 10:43:47.271"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Employee.SecondQuestion_LastDateReceived_mmyyyy_psf_a2b}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${SNAPReceivedDate}</var>
+</assign>
+<msg timestamp="20210812 10:43:47.271" level="INFO">${SNAPReceivedDate} = ['01', '2020']</msg>
+<status status="PASS" starttime="20210812 10:43:47.271" endtime="20210812 10:43:47.271"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${SNAPReceivedDate}[0]</arg>
+</arguments>
+<assign>
+<var>${SNAPReceivedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:47.271" level="INFO">${SNAPReceivedDateMonth} = 1</msg>
+<status status="PASS" starttime="20210812 10:43:47.271" endtime="20210812 10:43:47.271"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${SNAPReceivedDateMonth}</arg>
+</arguments>
+<assign>
+<var>${SNAPReceivedDateMonth}</var>
+</assign>
+<msg timestamp="20210812 10:43:47.271" level="INFO">${SNAPReceivedDateMonth} = 1</msg>
+<status status="PASS" starttime="20210812 10:43:47.271" endtime="20210812 10:43:47.271"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${loc_AssistanceSNAPMonth}</arg>
+<arg>${SNAPReceivedDateMonth}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:47.271" level="INFO">Selecting options from selection list '//label[text()='SNAP Date Received']/../app-month-year-selector//select' by value 1.</msg>
+<status status="PASS" starttime="20210812 10:43:47.271" endtime="20210812 10:43:48.514"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceSNAPYear}</arg>
+<arg>${SNAPReceivedDate}[1]</arg>
+</arguments>
+<msg timestamp="20210812 10:43:48.516" level="INFO">Typing text '2020' into text field '//label[text()='SNAP Date Received']/../app-month-year-selector//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:48.515" endtime="20210812 10:43:49.129"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210812 10:43:52.133" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210812 10:43:49.130" endtime="20210812 10:43:52.133"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_btnNext}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:52.133" level="INFO">Clicking element '//button[text()='Next']'.</msg>
+<status status="PASS" starttime="20210812 10:43:52.133" endtime="20210812 10:43:52.550"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:46.537" endtime="20210812 10:43:52.550"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:43.540" endtime="20210812 10:43:52.550"></status>
+</kw>
+<status status="PASS" starttime="20210812 10:43:43.540" endtime="20210812 10:43:52.550"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCity}</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210812 10:43:52.550" endtime="20210812 10:43:53.671"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientCity}</arg>
+<arg>${Employee.assistance_3rdQuestion_City_pdf_a2c}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:53.671" level="INFO">Typing text 'Omaha' into text field '//label[contains(text(), 'City')]/..//input'.</msg>
+<status status="PASS" starttime="20210812 10:43:53.671" endtime="20210812 10:43:54.269"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${loc_AssistanceRecipientState}</arg>
+<arg>${Employee.assistance_3rdQuestion_State_psf_a2d}</arg>
+</arguments>
+<msg timestamp="20210812 10:43:54.273" level="INFO">Typing text 'GA' into text field '//label[contains(text(), 'State')]/..//select'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210812 10:43:54.792" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210812 10:43:54.507" endtime="20210812 10:43:54.792"></status>
+</kw>
+<msg timestamp="20210812 10:43:54.808" level="FAIL">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=92.0.4515.131)
+</msg>
+<status status="FAIL" starttime="20210812 10:43:54.271" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:43:42.449" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:43:42.016" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:43:42.016" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:43:22.929" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:42:37.071" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:42:37.071" endtime="20210812 10:43:54.808"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:41:27.614" endtime="20210812 10:43:54.808" critical="yes">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=92.0.4515.131)
+</status>
+</test>
+<status status="FAIL" starttime="20210812 10:41:27.596" endtime="20210812 10:43:54.815"></status>
+</suite>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210812 10:43:54.817" endtime="20210812 10:43:57.041"></status>
+</kw>
+<status status="FAIL" starttime="20210812 10:41:06.493" endtime="20210812 10:43:57.041"></status>
+</suite>
+<status status="FAIL" starttime="20210812 10:41:06.461" endtime="20210812 10:43:57.045"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Nettax Kiosk Mode">Nettax Kiosk Mode</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Test Cases">Nettax Kiosk Mode.Test Cases</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Kiosk Mode">Nettax Kiosk Mode.Test Cases.Kiosk Mode</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
